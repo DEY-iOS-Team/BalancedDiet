@@ -17,6 +17,7 @@
 		D236B0CB27EB627000AAC9F0 /* FirebaseUserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D236B0CA27EB627000AAC9F0 /* FirebaseUserError.swift */; };
 		D236B0CD27EB667800AAC9F0 /* DataLocalization.strings in Resources */ = {isa = PBXBuildFile; fileRef = D236B0CC27EB667800AAC9F0 /* DataLocalization.strings */; };
 		D236B0CF27EC7BEA00AAC9F0 /* FirebaseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D236B0CE27EC7BEA00AAC9F0 /* FirebaseDTO.swift */; };
+		D2C2FD6F27F3369B00D9422A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2C2FD6E27F3369B00D9422A /* GoogleService-Info.plist */; };
 		D2C8868027E8637A00C88F97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8867F27E8637A00C88F97 /* AppDelegate.swift */; };
 		D2C8868227E8637A00C88F97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8868127E8637A00C88F97 /* SceneDelegate.swift */; };
 		D2C8868927E8637B00C88F97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2C8868827E8637B00C88F97 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		D236B0CA27EB627000AAC9F0 /* FirebaseUserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserError.swift; sourceTree = "<group>"; };
 		D236B0CC27EB667800AAC9F0 /* DataLocalization.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = DataLocalization.strings; path = BalancedDiet/Helpers/DataLocalization.strings; sourceTree = SOURCE_ROOT; };
 		D236B0CE27EC7BEA00AAC9F0 /* FirebaseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDTO.swift; sourceTree = "<group>"; };
+		D2C2FD6E27F3369B00D9422A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D2C8867C27E8637A00C88F97 /* BalancedDiet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BalancedDiet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2C8867F27E8637A00C88F97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2C8868127E8637A00C88F97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,8 +92,8 @@
 		D2C8867E27E8637A00C88F97 /* BalancedDiet */ = {
 			isa = PBXGroup;
 			children = (
-				D236B0A627EB2BB800AAC9F0 /* Services */,
 				D2C8869327E8647000C88F97 /* Application */,
+				D236B0A627EB2BB800AAC9F0 /* Services */,
 				D2C8869427E8648600C88F97 /* Resources */,
 			);
 			path = BalancedDiet;
@@ -103,6 +105,7 @@
 				D2C8867F27E8637A00C88F97 /* AppDelegate.swift */,
 				D2C8868127E8637A00C88F97 /* SceneDelegate.swift */,
 				D2C8868D27E8637B00C88F97 /* Info.plist */,
+				D2C2FD6E27F3369B00D9422A /* GoogleService-Info.plist */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -125,6 +128,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2C8869027E8637B00C88F97 /* Build configuration list for PBXNativeTarget "BalancedDiet" */;
 			buildPhases = (
+				D251475D27F32BA900B39B9C /* SwiftLint */,
 				D2CF8D0C27E8895400344661 /* Rswift */,
 				D2C8867827E8637A00C88F97 /* Sources */,
 				D2C8867927E8637A00C88F97 /* Frameworks */,
@@ -201,6 +205,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		D251475D27F32BA900B39B9C /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd BuildTools\nSDKROOT=\"$(xcrun --sdk macosx --show-sdk-path)\"\nswift run -c release swiftlint \"$SRCROOT\" --config ../BalancedDiet/.swiftlint.yml --path ../BalancedDiet\n";
+		};
 		D2CF8D0C27E8895400344661 /* Rswift */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;

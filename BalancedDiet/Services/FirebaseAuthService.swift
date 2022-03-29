@@ -10,14 +10,14 @@ import FirebaseAuth
 final class FirebaseAuthService {
     // MARK: - Properties
     static let shared = FirebaseAuthService()
-    
+
     private var authUser: User? {
         return Auth.auth().currentUser
     }
-    
+
     // MARK: - Initialization
     private init() {}
-    
+
     // MARK: - Methods
     func createUser(with model: FirebaseDTO.CreateUser, completion: @escaping (Result<String, FirebaseError>) -> Void) {
         Auth.auth().createUser(
@@ -55,7 +55,7 @@ final class FirebaseAuthService {
             }
         }
     }
-    
+
     func signIn(with model: FirebaseDTO.CreateUser, completion: @escaping (Result<String, FirebaseError>) -> Void) {
         Auth.auth().signIn(
             withEmail: model.email,
@@ -87,7 +87,7 @@ final class FirebaseAuthService {
             }
         }
     }
-    
+
     private func sendVerificationMail(completion: @escaping (Result<Void, FirebaseError>) -> Void) {
         guard let authUser = authUser else {
             completion(.failure(.unownError))
@@ -109,7 +109,7 @@ final class FirebaseAuthService {
             completion(.success(()))
         }
     }
-    
+
     func signOut(completion: (Result<Void, FirebaseError>) -> Void) {
         do {
             try Auth.auth().signOut()
