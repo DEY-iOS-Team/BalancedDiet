@@ -128,7 +128,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2C8869027E8637B00C88F97 /* Build configuration list for PBXNativeTarget "BalancedDiet" */;
 			buildPhases = (
-				D251475D27F32BA900B39B9C /* SwiftLint */,
 				D2CF8D0C27E8895400344661 /* Rswift */,
 				D2C8867827E8637A00C88F97 /* Sources */,
 				D2C8867927E8637A00C88F97 /* Frameworks */,
@@ -205,24 +204,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D251475D27F32BA900B39B9C /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cd BuildTools\nSDKROOT=\"$(xcrun --sdk macosx --show-sdk-path)\"\nswift run -c release swiftlint \"$SRCROOT\" --config ../BalancedDiet/.swiftlint.yml --path ../BalancedDiet\n";
-		};
 		D2CF8D0C27E8895400344661 /* Rswift */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
