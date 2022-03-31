@@ -7,6 +7,5 @@ let package = Package(
     name: "BuildTools",
     dependencies: [
          .package(url: "https://github.com/mac-cain13/R.swift", from: "6.1.0"),
-         .package(url: "https://github.com/realm/SwiftLint", from: "0.9.2"),
     ]
 )
