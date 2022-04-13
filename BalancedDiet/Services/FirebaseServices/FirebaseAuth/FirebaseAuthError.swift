@@ -1,5 +1,5 @@
 //
-//  UserError.swift
+//  FirebaseAuthError.swift
 //  BalancedDiet
 //
 //  Created by Yan Pepik on 23.03.22.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum FirebaseError: Error {
+enum FirebaseAuthError: Error {
     case emailAlreadyInUse
     case userNotFound
     case invalidEmail
@@ -18,7 +18,7 @@ enum FirebaseError: Error {
     case unownError
 }
 
-extension FirebaseError: LocalizedError {
+extension FirebaseAuthError: LocalizedError {
     var message: String? {
         switch self {
         case .emailAlreadyInUse:

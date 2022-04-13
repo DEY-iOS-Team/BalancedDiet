@@ -1,0 +1,16 @@
+/* 
+  LoginLocalization.strings
+  BalancedDiet
+
+  Created by Yan Pepik on 9.04.22.
+  
+*/
+
+"createAccount" = "Create account";
+"signUp" = "Sign up";
+"doesentHaveAccount" = "Doesent have an account?";
+"login" = "Login";
+"loginWithGoogle" = "Login with Google";
+"loginWithFacebook" = "Login with Facebook";
+"or" = "or";
+"forgotPassword" = "Forgot Password?";

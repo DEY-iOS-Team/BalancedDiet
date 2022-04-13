@@ -1,0 +1,11 @@
+/* 
+  SignupLocalization.strings
+  BalancedDiet
+
+  Created by Yan Pepik on 13.04.22.
+  
+*/
+
+"signup" = "Sign up";
+"haveAccount" = "Already have an account?";
+"login" = "Login";
