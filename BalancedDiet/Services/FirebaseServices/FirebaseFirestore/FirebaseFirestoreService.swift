@@ -21,19 +21,16 @@ final class FirebaseFirestoreService {
     func getData<T: Decodable>(
         endpoint: FirestoreEndpointProtocol,
         completion: @escaping (Result<T, FirebaseFirestoreError>) -> Void
-    ) {\
-        ]\;.l\[]kp'ko
-        
-        
-        
-        
+    ) {
         let docRef = database.collection(endpoint.collectionId).document(endpoint.documentId)
         docRef.getDocument(as: T.self) { result in
             switch result {
             case .success(let data):
                 completion(.success(data))
+                print("success")
             case .failure:
                 completion(.failure(.defaultError))
+                print("failure")
             }
         }
     }
