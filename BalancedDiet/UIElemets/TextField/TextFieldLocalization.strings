@@ -1,0 +1,12 @@
+/* 
+  TextField.strings
+  BalancedDiet
+
+  Created by Yan Pepik on 8.04.22.
+  
+*/
+
+"emailPlaceholderText" = "Email";
+"passwordPlaceholderText" = "Password";
+"repeatPasswordPlaceholderText" = "Repeat password";
+"nicknamenamePlaceholderText" = "UserName";

@@ -19,7 +19,10 @@ final class FirebaseAuthService {
     private init() {}
 
     // MARK: - Methods
-    func createUser(with model: FirebaseDTO.CreateUser, completion: @escaping (Result<String, FirebaseError>) -> Void) {
+    func createUser(
+        with model: FirebaseAuthDTO.CreateUser,
+        completion: @escaping (Result<String, FirebaseAuthError>) -> Void
+    ) {
         Auth.auth().createUser(
             withEmail: model.email,
             password: model.password
@@ -56,7 +59,10 @@ final class FirebaseAuthService {
         }
     }
 
-    func signIn(with model: FirebaseDTO.CreateUser, completion: @escaping (Result<String, FirebaseError>) -> Void) {
+    func signIn(
+        with model: FirebaseAuthDTO.SignIn,
+        completion: @escaping (Result<String, FirebaseAuthError>) -> Void
+    ) {
         Auth.auth().signIn(
             withEmail: model.email,
             password: model.password
@@ -77,18 +83,25 @@ final class FirebaseAuthService {
                     }
                 }
             } else {
-                guard
-                    let uid = authResult?.user.uid
-                else {
+                if let uid = authResult?.user.uid {
+                    completion(.success(uid))
+                } else {
                     completion(.failure(.unownError))
-                    return
                 }
-                completion(.success(uid))
             }
         }
     }
 
-    private func sendVerificationMail(completion: @escaping (Result<Void, FirebaseError>) -> Void) {
+    func signOut(completion: (Result<Void, FirebaseAuthError>) -> Void) {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            completion(.failure(.unownError))
+        }
+    }
+
+    // MARK: - Private Methods
+    private func sendVerificationMail(completion: @escaping (Result<Void, FirebaseAuthError>) -> Void) {
         guard let authUser = authUser else {
             completion(.failure(.unownError))
             return
@@ -107,23 +120,6 @@ final class FirebaseAuthService {
                 }
             }
             completion(.success(()))
-        }
-    }
-
-    func signOut(completion: (Result<Void, FirebaseError>) -> Void) {
-        do {
-            try Auth.auth().signOut()
-        } catch {
-            if let error = error as NSError? {
-                if let errorCode = AuthErrorCode(rawValue: error.code) {
-                    switch errorCode {
-                    case .networkError:
-                        completion(.failure(.unownError))
-                    default:
-                        completion(.failure(.unownError))
-                    }
-                }
-            }
         }
     }
 }
