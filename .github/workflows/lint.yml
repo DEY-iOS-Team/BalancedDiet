@@ -1,0 +1,29 @@
+name: SwiftLint
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/lint.yml'
+      - '.swiftlint.yml'
+      - '**/*.swift'
+
+jobs:
+  SwiftLint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Lint code using SwiftLint
+        uses: norio-nomura/action-swiftlint@3.2.1
+        with:
+          args: --strict
+        env:
+          DIFF_BASE: ${{ github.base_ref }}
+          steps:
+      - name: Get branch names
+        id: branch-name
+        uses: tj-actions/branch-names@v5.2
+        
+  call-workflow-passing-data:
+    uses: ./.github/workflows/build.yml@${{ steps.branch-name.outputs.current_branch }}
