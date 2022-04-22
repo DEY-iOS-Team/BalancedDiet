@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum SignupAssembly {
+enum SignupAssemblssssy {
     static func assembly() -> UIViewController {
         let presenter = SignupPresenter()
         let router = SignupRouter()
