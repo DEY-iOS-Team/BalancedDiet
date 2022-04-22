@@ -20,7 +20,6 @@ jobs:
           args: --strict
         env:
           DIFF_BASE: ${{ github.base_ref }}
-          steps:
   build:
     needs: SwiftLint
     name: Build and Test default scheme using any available iPhone simulator
