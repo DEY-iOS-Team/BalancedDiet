@@ -15,7 +15,7 @@ extension LoginPresenter: LoginPresentationLogic {
     func presetInititalData(response: Login.InitialData.Response) {
         let viewModel = Login.InitialData.ViewModel(
             forgotpasswordButtonTitle: R.string.loginLocalization.forgotPassword(),
-            sceneNameLabelText: R.string.loginLocalization.login(),
+            titleText: R.string.loginLocalization.login(),
             loginButtonTitle: R.string.loginLocalization.login(),
             loginWithGoogleButtonTitle: R.string.loginLocalization.loginWithGoogle(),
             loginWithGoogleButtonImage: R.image.google(),

@@ -45,7 +45,7 @@ final class LoginViewController: UIViewController {
         return button
     }()
 
-    private let sceneNameLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = R.font.poppinsSemiBold(size: Constants.fontSize)
         return label
@@ -121,7 +121,7 @@ final class LoginViewController: UIViewController {
 
     private func setupSubviews() {
         view.addSubviews(
-            sceneNameLabel,
+             titleLabel,
             textFieldsStackView,
             forgotPasswordButton,
             buttonsStackView,
@@ -130,14 +130,14 @@ final class LoginViewController: UIViewController {
     }
 
     private func setupLayout() {
-        sceneNameLabel.snp.makeConstraints {
+        titleLabel.snp.makeConstraints {
             $0.leading.equalTo(view.snp.leading).offset(Constants.inset)
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(view.frame.height * Constants.multiplier)
         }
 
         textFieldsStackView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(Constants.inset)
-            $0.top.equalTo(sceneNameLabel.snp.bottom).offset(Constants.topOffset)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(Constants.topOffset)
         }
 
         forgotPasswordButton.snp.makeConstraints {
@@ -157,17 +157,19 @@ final class LoginViewController: UIViewController {
     }
 
     private func setupActions() {
-        forgotPasswordButton.addTarget(self, action: #selector(forgotpasswordPressed), for: .touchUpInside)
-        loginButton.addTarget(self, action: #selector(loginPressed), for: .touchUpInside)
+        forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonPressed), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
         loginWithGoogleButton.addTarget(self, action: #selector(loginWithGooglePressed), for: .touchUpInside)
         loginWithFacebookButton.addTarget(self, action: #selector(loginWithFacebookPressed), for: .touchUpInside)
         routeToSignUpButton.addTarget(self, action: #selector(routeToSignUpPressed), for: .touchUpInside)
     }
 
     //MARK: - Actions
-    @objc private func forgotpasswordPressed() {}
+    @objc private func forgotPasswordButtonPressed() {
+        router.routeToForgotPassword()
+    }
 
-    @objc private func loginPressed() {}
+    @objc private func loginButtonPressed() {}
 
     @objc private func loginWithGooglePressed() {}
 
@@ -188,7 +190,7 @@ final class LoginViewController: UIViewController {
 extension LoginViewController: LoginDisplayLogic {
     func displayInititalData(viewModel: Login.InitialData.ViewModel) {
         forgotPasswordButton.setTitle(viewModel.forgotpasswordButtonTitle, for: .normal)
-        sceneNameLabel.text = viewModel.sceneNameLabelText
+        titleLabel.text = viewModel.titleText
         loginButton.setTitle(viewModel.loginButtonTitle, for: .normal)
         loginWithGoogleButton.setTitle(viewModel.loginWithGoogleButtonTitle, for: .normal)
         loginWithGoogleButton.setImage(viewModel.loginWithGoogleButtonImage, for: .normal)

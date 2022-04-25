@@ -12,7 +12,7 @@ enum Signup {
         struct Response {}
 
         struct ViewModel {
-            let sceneNameLabelText: String
+            let titleText: String
             let signUpButtonTitle: String
             let haveAccountLabelText: String
             let routeToLoginButtonTitle: String

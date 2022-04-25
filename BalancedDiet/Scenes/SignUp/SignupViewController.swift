@@ -35,7 +35,7 @@ final class SignupViewController: UIViewController {
     private let userNameTextField = TextFieldView(style: .userName)
     private let signUpButton = Button()
 
-    private let sceneNameLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = R.font.poppinsSemiBold(size: Constants.fontSize)
         return label
@@ -100,7 +100,7 @@ final class SignupViewController: UIViewController {
     private func setupSubviews() {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
-        contentView.addSubviews(sceneNameLabel, textFieldsStackView, signUpButton, haveAccountStackView)
+        contentView.addSubviews(titleLabel, textFieldsStackView, signUpButton, haveAccountStackView)
     }
     
     private func setupLayout() {
@@ -114,14 +114,14 @@ final class SignupViewController: UIViewController {
             $0.height.equalTo(view.safeAreaLayoutGuide.snp.height).priority(.low)
         }
 
-        sceneNameLabel.snp.makeConstraints {
+        titleLabel.snp.makeConstraints {
             $0.leading.equalTo(contentView.snp.leading).offset(Constants.inset)
             $0.top.equalTo(contentView.safeAreaLayoutGuide.snp.top).offset(view.frame.height * Constants.multiplier)
         }
 
         textFieldsStackView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(Constants.inset)
-            $0.top.equalTo(sceneNameLabel.snp.bottom).offset(Constants.topOffset)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(Constants.topOffset)
         }
 
         signUpButton.snp.makeConstraints {
@@ -186,7 +186,7 @@ final class SignupViewController: UIViewController {
 // MARK: - SignUpDisplayLogic
 extension SignupViewController: SignupDisplayLogic {
     func displayInititalData(viewModel: Signup.InitialData.ViewModel) {
-        sceneNameLabel.text = viewModel.sceneNameLabelText
+        titleLabel.text = viewModel.titleText
         signUpButton.setTitle(viewModel.signUpButtonTitle, for: .normal)
         haveAccountLabel.text = viewModel.haveAccountLabelText
         routeToLoginButton.setTitle(viewModel.routeToLoginButtonTitle, for: .normal)

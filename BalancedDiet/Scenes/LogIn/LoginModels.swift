@@ -15,7 +15,7 @@ enum Login {
         
         struct ViewModel {
             let forgotpasswordButtonTitle: String
-            let sceneNameLabelText: String
+            let titleText: String
             let loginButtonTitle: String
             let loginWithGoogleButtonTitle: String
             let loginWithGoogleButtonImage: UIImage?
