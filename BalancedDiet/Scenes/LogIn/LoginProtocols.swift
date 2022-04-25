@@ -18,5 +18,6 @@ protocol LoginPresentationLogic: AnyObject {
 }
 
 protocol LoginRoutingLogic: AnyObject {
+    func routeToForgotPassword()
     func routeToSignUp()
 }

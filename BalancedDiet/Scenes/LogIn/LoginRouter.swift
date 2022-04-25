@@ -14,6 +14,11 @@ final class LoginRouter: LoginRoutingLogic {
     weak var viewController: UIViewController?
     
     // MARK: - LoginRoutingLogic
+    func routeToForgotPassword() {
+        let forgotPasswordViewController = ForgotPasswordAssembly.assembly()
+        viewController?.navigationController?.pushViewController(forgotPasswordViewController, animated: true)
+    }
+
     func routeToSignUp() {
         let signUpViewController = SignupAssembly.assembly()
         viewController?.navigationController?.pushViewController(signUpViewController, animated: true)

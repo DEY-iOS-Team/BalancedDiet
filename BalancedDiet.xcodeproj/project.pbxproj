@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		D2022B5D2802FA0300F428B9 /* ShadowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2022B5C2802FA0300F428B9 /* ShadowManager.swift */; };
+		D227C77A2816A4D60007E5A1 /* ForgotPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D227C7722816A4D60007E5A1 /* ForgotPasswordPresenter.swift */; };
+		D227C77C2816A4D60007E5A1 /* ForgotPasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D227C7742816A4D60007E5A1 /* ForgotPasswordRouter.swift */; };
+		D227C77D2816A4D60007E5A1 /* ForgotPasswordModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D227C7752816A4D60007E5A1 /* ForgotPasswordModels.swift */; };
+		D227C77E2816A4D60007E5A1 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D227C7762816A4D60007E5A1 /* ForgotPasswordViewController.swift */; };
+		D227C77F2816A4D60007E5A1 /* ForgotPasswordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D227C7772816A4D60007E5A1 /* ForgotPasswordProtocols.swift */; };
+		D227C7802816A4D60007E5A1 /* ForgotPasswordAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D227C7782816A4D60007E5A1 /* ForgotPasswordAssembly.swift */; };
+		D227C7812816A4D60007E5A1 /* ForgotPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D227C7792816A4D60007E5A1 /* ForgotPasswordInteractor.swift */; };
+		D227C7832816AB380007E5A1 /* ForgotPasswordLocalization.strings in Resources */ = {isa = PBXBuildFile; fileRef = D227C7822816AB380007E5A1 /* ForgotPasswordLocalization.strings */; };
 		D236B0CD27EB667800AAC9F0 /* DataLocalization.strings in Resources */ = {isa = PBXBuildFile; fileRef = D236B0CC27EB667800AAC9F0 /* DataLocalization.strings */; };
 		D269185327FF116500F34C86 /* FirebaseAuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D269185027FF116500F34C86 /* FirebaseAuthError.swift */; };
 		D269185427FF116500F34C86 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D269185127FF116500F34C86 /* FirebaseAuthService.swift */; };
@@ -59,6 +67,14 @@
 
 /* Begin PBXFileReference section */
 		D2022B5C2802FA0300F428B9 /* ShadowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowManager.swift; sourceTree = "<group>"; };
+		D227C7722816A4D60007E5A1 /* ForgotPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPresenter.swift; sourceTree = "<group>"; };
+		D227C7742816A4D60007E5A1 /* ForgotPasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRouter.swift; sourceTree = "<group>"; };
+		D227C7752816A4D60007E5A1 /* ForgotPasswordModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordModels.swift; sourceTree = "<group>"; };
+		D227C7762816A4D60007E5A1 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		D227C7772816A4D60007E5A1 /* ForgotPasswordProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordProtocols.swift; sourceTree = "<group>"; };
+		D227C7782816A4D60007E5A1 /* ForgotPasswordAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordAssembly.swift; sourceTree = "<group>"; };
+		D227C7792816A4D60007E5A1 /* ForgotPasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordInteractor.swift; sourceTree = "<group>"; };
+		D227C7822816AB380007E5A1 /* ForgotPasswordLocalization.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = ForgotPasswordLocalization.strings; sourceTree = "<group>"; };
 		D236B0CC27EB667800AAC9F0 /* DataLocalization.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = DataLocalization.strings; path = BalancedDiet/Services/FirebaseServices/DataLocalization.strings; sourceTree = SOURCE_ROOT; };
 		D269185027FF116500F34C86 /* FirebaseAuthError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuthError.swift; sourceTree = "<group>"; };
 		D269185127FF116500F34C86 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
@@ -133,6 +149,7 @@
 		D21F85E427F594DA002DDC9E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D227C7712816A4B70007E5A1 /* ForgotPassword */,
 				D2CB6FD527FC5AE800258CDE /* LogIn */,
 				D21F85E527F59837002DDC9E /* SignUp */,
 			);
@@ -152,6 +169,21 @@
 				D2F379A428072945002C801F /* SignupLocalization.strings */,
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		D227C7712816A4B70007E5A1 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				D227C7762816A4D60007E5A1 /* ForgotPasswordViewController.swift */,
+				D227C7792816A4D60007E5A1 /* ForgotPasswordInteractor.swift */,
+				D227C7722816A4D60007E5A1 /* ForgotPasswordPresenter.swift */,
+				D227C7742816A4D60007E5A1 /* ForgotPasswordRouter.swift */,
+				D227C7752816A4D60007E5A1 /* ForgotPasswordModels.swift */,
+				D227C7772816A4D60007E5A1 /* ForgotPasswordProtocols.swift */,
+				D227C7782816A4D60007E5A1 /* ForgotPasswordAssembly.swift */,
+				D227C7822816AB380007E5A1 /* ForgotPasswordLocalization.strings */,
+			);
+			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
 		D236B0A627EB2BB800AAC9F0 /* Services */ = {
@@ -394,6 +426,7 @@
 				D26D1E782801D73E0002D3E5 /* LoginLocalization.strings in Resources */,
 				D2C8868C27E8637B00C88F97 /* LaunchScreen.storyboard in Resources */,
 				D2F379A628073B7C002C801F /* PoppinsSemiBold.ttf in Resources */,
+				D227C7832816AB380007E5A1 /* ForgotPasswordLocalization.strings in Resources */,
 				D2C8868927E8637B00C88F97 /* Assets.xcassets in Resources */,
 				D236B0CD27EB667800AAC9F0 /* DataLocalization.strings in Resources */,
 				D26D1E6928006C080002D3E5 /* TextFieldLocalization.strings in Resources */,
@@ -439,11 +472,16 @@
 				D2C11B922808A1E100959A30 /* String.swift in Sources */,
 				D2CB6FD427FC5ADF00258CDE /* LoginProtocols.swift in Sources */,
 				D2C4BDBE27F5A4D4001B955D /* SignupViewController.swift in Sources */,
+				D227C7812816A4D60007E5A1 /* ForgotPasswordInteractor.swift in Sources */,
 				D2C8868227E8637A00C88F97 /* SceneDelegate.swift in Sources */,
 				D269185D27FF117700F34C86 /* FirestoreEndpointProtocol.swift in Sources */,
+				D227C77F2816A4D60007E5A1 /* ForgotPasswordProtocols.swift in Sources */,
 				D2C4BDBA27F5A4D4001B955D /* SignupPresenter.swift in Sources */,
+				D227C77D2816A4D60007E5A1 /* ForgotPasswordModels.swift in Sources */,
 				D2CF8D0F27E88BFA00344661 /* R.generated.swift in Sources */,
+				D227C77A2816A4D60007E5A1 /* ForgotPasswordPresenter.swift in Sources */,
 				D269185327FF116500F34C86 /* FirebaseAuthError.swift in Sources */,
+				D227C77C2816A4D60007E5A1 /* ForgotPasswordRouter.swift in Sources */,
 				D2C4BDBF27F5A4D4001B955D /* SignupAssembly.swift in Sources */,
 				D2C042FA2809A5C8001A1579 /* UIViewController.swift in Sources */,
 				D26D1E722801C0CC0002D3E5 /* TextFieldViewModel.swift in Sources */,
@@ -454,6 +492,8 @@
 				D2C4BDC027F5A4D4001B955D /* SignupInteractor.swift in Sources */,
 				D2F379A928073BC7002C801F /* LineView.swift in Sources */,
 				D2022B5D2802FA0300F428B9 /* ShadowManager.swift in Sources */,
+				D227C7802816A4D60007E5A1 /* ForgotPasswordAssembly.swift in Sources */,
+				D227C77E2816A4D60007E5A1 /* ForgotPasswordViewController.swift in Sources */,
 				D2CB6FCD27FC5A7100258CDE /* LoginModels.swift in Sources */,
 				D26D1E742801C0CC0002D3E5 /* TextFieldView.swift in Sources */,
 				D269185427FF116500F34C86 /* FirebaseAuthService.swift in Sources */,

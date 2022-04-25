@@ -14,7 +14,7 @@ final class SignupPresenter {
 extension SignupPresenter: SignupPresentationLogic {
     func presetInititalData(response: Signup.InitialData.Response) {
         let viewModel = Signup.InitialData.ViewModel(
-            sceneNameLabelText: R.string.signupLocalization.signup(),
+            titleText: R.string.signupLocalization.signup(),
             signUpButtonTitle: R.string.signupLocalization.signup(),
             haveAccountLabelText: R.string.signupLocalization.haveAccount(),
             routeToLoginButtonTitle: R.string.signupLocalization.login()
