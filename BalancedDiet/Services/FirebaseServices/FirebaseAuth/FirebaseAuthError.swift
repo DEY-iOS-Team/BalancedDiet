@@ -12,14 +12,13 @@ enum FirebaseAuthError: Error {
     case userNotFound
     case invalidEmail
     case networkError
-    case weakPassword
     case wrongPassword
     case emailChangeNeedsVerification
     case unownError
 }
 
 extension FirebaseAuthError: LocalizedError {
-    var message: String? {
+    var message: String {
         switch self {
         case .emailAlreadyInUse:
             return R.string.dataLocalization.emailAlreadyInUse()
@@ -29,8 +28,6 @@ extension FirebaseAuthError: LocalizedError {
             return R.string.dataLocalization.invalidEmail()
         case .networkError:
             return R.string.dataLocalization.networkError()
-        case .weakPassword:
-            return R.string.dataLocalization.weakPassword()
         case .wrongPassword:
             return R.string.dataLocalization.wrongPassword()
         case .emailChangeNeedsVerification:

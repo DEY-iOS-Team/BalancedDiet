@@ -9,8 +9,7 @@ import Foundation
 
 enum FirebaseFirestoreDTO {
     struct User: Codable {
-        let name: String
+        let userName: String
         let email: String
-        let imageURL: String
     }
 }

@@ -9,9 +9,10 @@ import UIKit
 
 enum SignupAssembly {
     static func assembly() -> UIViewController {
-        let presenter = SignupPresenter()
-        let router = SignupRouter()
-        let interactor = SignupInteractor(presenter: presenter)
+        let presenter = SignUpPresenter()
+        let router = SignUpRouter()
+        let validator = ValidatorManager()
+        let interactor = SignUpInteractor(presenter: presenter, validator: validator)
         let viewController = SignupViewController(interactor: interactor, router: router)
 
         router.viewController = viewController

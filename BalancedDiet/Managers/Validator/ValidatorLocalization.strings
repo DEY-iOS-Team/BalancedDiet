@@ -1,0 +1,16 @@
+/* 
+  ValidatorLocalization.strings
+  BalancedDiet
+
+  Created by Yan Pepik on 25.04.22.
+  
+*/
+
+"wrongFormatOfUserName" = "Wrong format of user name. Use at least one nomber and one capital letter.";
+"wrongFormatOfEmail" = "Wrong format email.";
+"wrongFormatOfPassword" = "Wrong format of password. Use at least one nomber and one capital letter.";
+"emptyUsername" = "User name field can't be empty.";
+"emptyEmail" = "Email field can't be empty.";
+"emptyPassword" = "Password field can't be empty.";
+"emptyConfirnPassword" = "Repeat your password.";
+"mismatchedPassword" = "Passwords don't match.";
