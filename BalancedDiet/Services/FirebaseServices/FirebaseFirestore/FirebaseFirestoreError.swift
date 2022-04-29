@@ -12,7 +12,7 @@ enum FirebaseFirestoreError: Error {
 }
 
 extension FirebaseFirestoreError: LocalizedError {
-    var message: String? {
+    var message: String {
         switch self {
         case .defaultError:
             return R.string.dataLocalization.defaultError()
