@@ -11,12 +11,13 @@ enum LoginAssembly {
     static func assembly() -> UIViewController {
         let presenter = LoginPresenter()
         let router = LoginRouter()
-        let interactor = LoginInteractor(presenter: presenter)
+        let validator = ValidatorManager()
+        let interactor = LoginInteractor(presenter: presenter, validator: validator)
         let viewController = LoginViewController(interactor: interactor, router: router)
-        
+
         router.viewController = viewController
         presenter.viewController = viewController
-        
+
         return viewController
     }
 }

@@ -88,8 +88,8 @@ extension SignUpInteractor: SignUpBusinessLogic {
                         id: id,
                         userModel: FirebaseFirestoreDTO.User(userName: request.userName, email: request.email)
                     )
-                case .failure:
-                    self.presentFailure(error: .firebaseAuthError(message: FirebaseAuthError.networkError.message))
+                case .failure(let error):
+                    self.presentFailure(error: .firebaseAuthError(message: error.message))
                 }
             }
         } else {

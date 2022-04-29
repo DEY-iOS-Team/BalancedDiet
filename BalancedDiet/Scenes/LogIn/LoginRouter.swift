@@ -9,10 +9,10 @@ import UIKit
 
 final class LoginRouter: LoginRoutingLogic {
     var navigationController: UINavigationController?
-    
+
     // MARK: - Properties
     weak var viewController: UIViewController?
-    
+
     // MARK: - LoginRoutingLogic
     func routeToForgotPassword() {
         let forgotPasswordViewController = ForgotPasswordAssembly.assembly()

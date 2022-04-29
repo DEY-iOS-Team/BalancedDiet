@@ -7,14 +7,17 @@
 
 protocol LoginDisplayLogic: AnyObject {
     func displayInititalData(viewModel: Login.InitialData.ViewModel)
+    func displayLoginResult(viewModel: Login.LoginValidation.ViewModel)
 }
 
 protocol LoginBusinessLogic: AnyObject {
     func fetchInitialData(request: Login.InitialData.Request)
+    func login(request: Login.LoginValidation.Request)
 }
 
 protocol LoginPresentationLogic: AnyObject {
     func presetInititalData(response: Login.InitialData.Response)
+    func presentLoginResult(response: Login.LoginValidation.Response)
 }
 
 protocol LoginRoutingLogic: AnyObject {

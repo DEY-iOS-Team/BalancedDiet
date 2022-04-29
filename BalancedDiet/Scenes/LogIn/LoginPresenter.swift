@@ -27,4 +27,9 @@ extension LoginPresenter: LoginPresentationLogic {
         )
         viewController?.displayInititalData(viewModel: viewModel)
     }
+
+    func presentLoginResult(response: Login.LoginValidation.Response) {
+        let viewModel = Login.LoginValidation.ViewModel(authResult: response.authResult)
+        viewController?.displayLoginResult(viewModel: viewModel)
+    }
 }

@@ -57,9 +57,9 @@ final class FirebaseAuthService {
         }
     }
 
-    func signIn(
+    func login(
         with model: FirebaseAuthDTO.SignIn,
-        completion: @escaping (Result<String, FirebaseAuthError>) -> Void
+        completion: @escaping (Result<Void, FirebaseAuthError>) -> Void
     ) {
         Auth.auth().signIn(
             withEmail: model.email,
@@ -70,8 +70,6 @@ final class FirebaseAuthService {
                     switch errorCode {
                     case .userNotFound:
                         completion(.failure(.userNotFound))
-                    case .invalidEmail:
-                        completion(.failure(.invalidEmail))
                     case .networkError:
                         completion(.failure(.networkError))
                     case .wrongPassword:
@@ -81,8 +79,16 @@ final class FirebaseAuthService {
                     }
                 }
             } else {
-                if let uid = authResult?.user.uid {
-                    completion(.success(uid))
+                if (authResult?.user.uid) != nil {
+                    self.checkVerificationEmail { result in
+                        switch result {
+                        case .success:
+                            completion(.success(()))
+                            print("Success")
+                        case .failure:
+                            completion(.failure(.emailChangeNeedsVerification))
+                        }
+                    }
                 } else {
                     completion(.failure(.unownError))
                 }
@@ -99,6 +105,17 @@ final class FirebaseAuthService {
     }
 
     // MARK: - Private Methods
+    private func checkVerificationEmail(completion: @escaping (Result<Void, FirebaseAuthError>) -> Void) {
+        guard let authUser = authUser else {
+            completion(.failure(.unownError))
+            return
+        }
+        if !authUser.isEmailVerified {
+            completion(.failure(.emailChangeNeedsVerification))
+        } else {
+            completion(.success(()))
+        }
+    }
     private func sendVerificationMail(completion: @escaping (Result<Void, FirebaseAuthError>) -> Void) {
         guard let authUser = authUser else {
             completion(.failure(.unownError))
