@@ -9,13 +9,20 @@ final class SignUpInteractor {
     // MARK: - Private Properties
     private let presenter: SignUpPresentationLogic
     private let validator: ValidatorProtocol
-    private let authService = FirebaseAuthService.shared
-    private let firestoreService = FirebaseFirestoreService.shared
+    private let authService: FirebaseAuthService
+    private let firestoreService: FirebaseFirestoreService
 
     // MARK: - Initialization
-    init(presenter: SignUpPresentationLogic, validator: ValidatorProtocol) {
+    init(
+        presenter: SignUpPresentationLogic,
+        validator: ValidatorProtocol = ValidatorManager(),
+        authService: FirebaseAuthService = FirebaseAuthService.shared,
+        firestoreService: FirebaseFirestoreService = FirebaseFirestoreService.shared
+    ) {
         self.presenter = presenter
         self.validator = validator
+        self.authService = authService
+        self.firestoreService = firestoreService
     }
 
     // MARK: - Private Methods
@@ -88,8 +95,8 @@ extension SignUpInteractor: SignUpBusinessLogic {
                         id: id,
                         userModel: FirebaseFirestoreDTO.User(userName: request.userName, email: request.email)
                     )
-                case .failure:
-                    self.presentFailure(error: .firebaseAuthError(message: FirebaseAuthError.networkError.message))
+                case .failure(let error):
+                    self.presentFailure(error: .firebaseAuthError(message: error.message))
                 }
             }
         } else {

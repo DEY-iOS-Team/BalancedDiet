@@ -8,12 +8,12 @@
 
 // MARK: - FirebaseAuth Error
 "emailAlreadyInUse" = "The email is already in use with another account";
-"userNotFound" = "Account not found for the specified user. Please check and try again";
-"invalidEmail" = "Account not found for the specified email. Please check and try again";
+"userNotFound" = "That user not found.";
+"invalidEmail" = "Your email is't valid";
 "networkError" = "Network error. Please try again.";
 "weakPassword" = "Your password is weak. Think of another password";
 "wrongPassword" = "Your password is incorrect. Please try again or use 'Forgot password' to reset your password";
-"emailChangeNeedsVerification" = "No email was sent to your email";
+"emailChangeNeedsVerification" = "Verification message has being sent to your email. Verify it";
 "resetPassword" = "Can't reset password with your email";
 "unknownError" = "Unknown Error occured";
 

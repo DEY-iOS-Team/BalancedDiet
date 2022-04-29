@@ -13,10 +13,10 @@ enum LoginAssembly {
         let router = LoginRouter()
         let interactor = LoginInteractor(presenter: presenter)
         let viewController = LoginViewController(interactor: interactor, router: router)
-        
+
         router.viewController = viewController
         presenter.viewController = viewController
-        
+
         return viewController
     }
 }
