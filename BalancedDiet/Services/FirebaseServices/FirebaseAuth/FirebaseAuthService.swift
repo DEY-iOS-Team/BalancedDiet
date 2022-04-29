@@ -34,8 +34,6 @@ final class FirebaseAuthService {
                         completion(.failure(.emailAlreadyInUse))
                     case .networkError:
                         completion(.failure(.networkError))
-                    case .weakPassword:
-                        completion(.failure(.weakPassword))
                     default:
                         completion(.failure(.unownError))
                     }

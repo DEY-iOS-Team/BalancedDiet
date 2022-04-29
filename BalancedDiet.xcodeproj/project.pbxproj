@@ -16,7 +16,11 @@
 		D227C7802816A4D60007E5A1 /* ForgotPasswordAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D227C7782816A4D60007E5A1 /* ForgotPasswordAssembly.swift */; };
 		D227C7812816A4D60007E5A1 /* ForgotPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D227C7792816A4D60007E5A1 /* ForgotPasswordInteractor.swift */; };
 		D227C7832816AB380007E5A1 /* ForgotPasswordLocalization.strings in Resources */ = {isa = PBXBuildFile; fileRef = D227C7822816AB380007E5A1 /* ForgotPasswordLocalization.strings */; };
+		D227C78E2816DEC10007E5A1 /* ValidatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D227C78D2816DEC10007E5A1 /* ValidatorManager.swift */; };
+		D227C7912816E0640007E5A1 /* ValidatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D227C7902816E0640007E5A1 /* ValidatorProtocol.swift */; };
+		D227C7952816E3820007E5A1 /* ValidatorLocalization.strings in Resources */ = {isa = PBXBuildFile; fileRef = D227C7942816E3820007E5A1 /* ValidatorLocalization.strings */; };
 		D236B0CD27EB667800AAC9F0 /* DataLocalization.strings in Resources */ = {isa = PBXBuildFile; fileRef = D236B0CC27EB667800AAC9F0 /* DataLocalization.strings */; };
+		D257BE4E281BD4E9004B7369 /* SignUpEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D257BE4D281BD4E9004B7369 /* SignUpEndpoint.swift */; };
 		D269185327FF116500F34C86 /* FirebaseAuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D269185027FF116500F34C86 /* FirebaseAuthError.swift */; };
 		D269185427FF116500F34C86 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D269185127FF116500F34C86 /* FirebaseAuthService.swift */; };
 		D269185527FF116500F34C86 /* FirebaseAuthDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D269185227FF116500F34C86 /* FirebaseAuthDTO.swift */; };
@@ -38,13 +42,13 @@
 		D2C042F528095E3D001A1579 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C042F428095E3D001A1579 /* UIView.swift */; };
 		D2C042FA2809A5C8001A1579 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C042F92809A5C8001A1579 /* UIViewController.swift */; };
 		D2C11B922808A1E100959A30 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C11B912808A1E100959A30 /* String.swift */; };
-		D2C4BDBA27F5A4D4001B955D /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C4BDB327F5A4D4001B955D /* SignupPresenter.swift */; };
-		D2C4BDBC27F5A4D4001B955D /* SignupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C4BDB527F5A4D4001B955D /* SignupRouter.swift */; };
+		D2C4BDBA27F5A4D4001B955D /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C4BDB327F5A4D4001B955D /* SignUpPresenter.swift */; };
+		D2C4BDBC27F5A4D4001B955D /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C4BDB527F5A4D4001B955D /* SignUpRouter.swift */; };
 		D2C4BDBD27F5A4D4001B955D /* SignUpModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C4BDB627F5A4D4001B955D /* SignUpModels.swift */; };
 		D2C4BDBE27F5A4D4001B955D /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C4BDB727F5A4D4001B955D /* SignupViewController.swift */; };
 		D2C4BDBF27F5A4D4001B955D /* SignupAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C4BDB827F5A4D4001B955D /* SignupAssembly.swift */; };
-		D2C4BDC027F5A4D4001B955D /* SignupInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C4BDB927F5A4D4001B955D /* SignupInteractor.swift */; };
-		D2C4BDC227F5A4E7001B955D /* SignUpProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C4BDC127F5A4E7001B955D /* SignUpProtocols.swift */; };
+		D2C4BDC027F5A4D4001B955D /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C4BDB927F5A4D4001B955D /* SignUpInteractor.swift */; };
+		D2C4BDC227F5A4E7001B955D /* SignupProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C4BDC127F5A4E7001B955D /* SignupProtocols.swift */; };
 		D2C4BDC427F5A962001B955D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2C4BDC327F5A962001B955D /* Colors.xcassets */; };
 		D2C4BDC827F5AE15001B955D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2C4BDC727F5AE15001B955D /* GoogleService-Info.plist */; };
 		D2C8868227E8637A00C88F97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8868127E8637A00C88F97 /* SceneDelegate.swift */; };
@@ -75,7 +79,11 @@
 		D227C7782816A4D60007E5A1 /* ForgotPasswordAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordAssembly.swift; sourceTree = "<group>"; };
 		D227C7792816A4D60007E5A1 /* ForgotPasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordInteractor.swift; sourceTree = "<group>"; };
 		D227C7822816AB380007E5A1 /* ForgotPasswordLocalization.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = ForgotPasswordLocalization.strings; sourceTree = "<group>"; };
+		D227C78D2816DEC10007E5A1 /* ValidatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorManager.swift; sourceTree = "<group>"; };
+		D227C7902816E0640007E5A1 /* ValidatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorProtocol.swift; sourceTree = "<group>"; };
+		D227C7942816E3820007E5A1 /* ValidatorLocalization.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = ValidatorLocalization.strings; sourceTree = "<group>"; };
 		D236B0CC27EB667800AAC9F0 /* DataLocalization.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = DataLocalization.strings; path = BalancedDiet/Services/FirebaseServices/DataLocalization.strings; sourceTree = SOURCE_ROOT; };
+		D257BE4D281BD4E9004B7369 /* SignUpEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEndpoint.swift; sourceTree = "<group>"; };
 		D269185027FF116500F34C86 /* FirebaseAuthError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuthError.swift; sourceTree = "<group>"; };
 		D269185127FF116500F34C86 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		D269185227FF116500F34C86 /* FirebaseAuthDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuthDTO.swift; sourceTree = "<group>"; };
@@ -94,13 +102,13 @@
 		D2C042F428095E3D001A1579 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		D2C042F92809A5C8001A1579 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		D2C11B912808A1E100959A30 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		D2C4BDB327F5A4D4001B955D /* SignupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
-		D2C4BDB527F5A4D4001B955D /* SignupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRouter.swift; sourceTree = "<group>"; };
+		D2C4BDB327F5A4D4001B955D /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
+		D2C4BDB527F5A4D4001B955D /* SignUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRouter.swift; sourceTree = "<group>"; };
 		D2C4BDB627F5A4D4001B955D /* SignUpModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModels.swift; sourceTree = "<group>"; };
 		D2C4BDB727F5A4D4001B955D /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		D2C4BDB827F5A4D4001B955D /* SignupAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupAssembly.swift; sourceTree = "<group>"; };
-		D2C4BDB927F5A4D4001B955D /* SignupInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupInteractor.swift; sourceTree = "<group>"; };
-		D2C4BDC127F5A4E7001B955D /* SignUpProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProtocols.swift; sourceTree = "<group>"; };
+		D2C4BDB927F5A4D4001B955D /* SignUpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInteractor.swift; sourceTree = "<group>"; };
+		D2C4BDC127F5A4E7001B955D /* SignupProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupProtocols.swift; sourceTree = "<group>"; };
 		D2C4BDC327F5A962001B955D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		D2C4BDC727F5AE15001B955D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D2C8867C27E8637A00C88F97 /* BalancedDiet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BalancedDiet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,12 +168,13 @@
 			isa = PBXGroup;
 			children = (
 				D2C4BDB727F5A4D4001B955D /* SignupViewController.swift */,
-				D2C4BDB927F5A4D4001B955D /* SignupInteractor.swift */,
-				D2C4BDB327F5A4D4001B955D /* SignupPresenter.swift */,
+				D2C4BDB927F5A4D4001B955D /* SignUpInteractor.swift */,
+				D2C4BDB327F5A4D4001B955D /* SignUpPresenter.swift */,
 				D2C4BDB627F5A4D4001B955D /* SignUpModels.swift */,
-				D2C4BDB527F5A4D4001B955D /* SignupRouter.swift */,
+				D2C4BDB527F5A4D4001B955D /* SignUpRouter.swift */,
 				D2C4BDB827F5A4D4001B955D /* SignupAssembly.swift */,
-				D2C4BDC127F5A4E7001B955D /* SignUpProtocols.swift */,
+				D2C4BDC127F5A4E7001B955D /* SignupProtocols.swift */,
+				D257BE4D281BD4E9004B7369 /* SignUpEndpoint.swift */,
 				D2F379A428072945002C801F /* SignupLocalization.strings */,
 			);
 			path = SignUp;
@@ -184,6 +193,24 @@
 				D227C7822816AB380007E5A1 /* ForgotPasswordLocalization.strings */,
 			);
 			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		D227C78C2816DEB20007E5A1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D227C78F2816E03F0007E5A1 /* Validator */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		D227C78F2816E03F0007E5A1 /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				D227C78D2816DEC10007E5A1 /* ValidatorManager.swift */,
+				D227C7902816E0640007E5A1 /* ValidatorProtocol.swift */,
+				D227C7942816E3820007E5A1 /* ValidatorLocalization.strings */,
+			);
+			path = Validator;
 			sourceTree = "<group>";
 		};
 		D236B0A627EB2BB800AAC9F0 /* Services */ = {
@@ -288,6 +315,7 @@
 				D2C4BDC927F5C970001B955D /* UIElemets */,
 				D2C8869327E8647000C88F97 /* Application */,
 				D21F85E427F594DA002DDC9E /* Scenes */,
+				D227C78C2816DEB20007E5A1 /* Managers */,
 				D236B0A627EB2BB800AAC9F0 /* Services */,
 				D2C8869427E8648600C88F97 /* Resources */,
 			);
@@ -422,6 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2C4BDC427F5A962001B955D /* Colors.xcassets in Resources */,
+				D227C7952816E3820007E5A1 /* ValidatorLocalization.strings in Resources */,
 				D2F379A528072945002C801F /* SignupLocalization.strings in Resources */,
 				D26D1E782801D73E0002D3E5 /* LoginLocalization.strings in Resources */,
 				D2C8868C27E8637B00C88F97 /* LaunchScreen.storyboard in Resources */,
@@ -464,9 +493,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D227C78E2816DEC10007E5A1 /* ValidatorManager.swift in Sources */,
 				D2C042F528095E3D001A1579 /* UIView.swift in Sources */,
 				D269185527FF116500F34C86 /* FirebaseAuthDTO.swift in Sources */,
-				D2C4BDBC27F5A4D4001B955D /* SignupRouter.swift in Sources */,
+				D2C4BDBC27F5A4D4001B955D /* SignUpRouter.swift in Sources */,
 				D2CB6FD027FC5A7100258CDE /* LoginInteractor.swift in Sources */,
 				D26D1E732801C0CC0002D3E5 /* TextField.swift in Sources */,
 				D2C11B922808A1E100959A30 /* String.swift in Sources */,
@@ -476,11 +506,12 @@
 				D2C8868227E8637A00C88F97 /* SceneDelegate.swift in Sources */,
 				D269185D27FF117700F34C86 /* FirestoreEndpointProtocol.swift in Sources */,
 				D227C77F2816A4D60007E5A1 /* ForgotPasswordProtocols.swift in Sources */,
-				D2C4BDBA27F5A4D4001B955D /* SignupPresenter.swift in Sources */,
+				D2C4BDBA27F5A4D4001B955D /* SignUpPresenter.swift in Sources */,
 				D227C77D2816A4D60007E5A1 /* ForgotPasswordModels.swift in Sources */,
 				D2CF8D0F27E88BFA00344661 /* R.generated.swift in Sources */,
 				D227C77A2816A4D60007E5A1 /* ForgotPasswordPresenter.swift in Sources */,
 				D269185327FF116500F34C86 /* FirebaseAuthError.swift in Sources */,
+				D257BE4E281BD4E9004B7369 /* SignUpEndpoint.swift in Sources */,
 				D227C77C2816A4D60007E5A1 /* ForgotPasswordRouter.swift in Sources */,
 				D2C4BDBF27F5A4D4001B955D /* SignupAssembly.swift in Sources */,
 				D2C042FA2809A5C8001A1579 /* UIViewController.swift in Sources */,
@@ -489,7 +520,7 @@
 				D26D1E762801C9740002D3E5 /* AppDelegate.swift in Sources */,
 				D269185B27FF117700F34C86 /* FirebaseFirestoreService.swift in Sources */,
 				D2CB6FCC27FC5A7100258CDE /* LoginRouter.swift in Sources */,
-				D2C4BDC027F5A4D4001B955D /* SignupInteractor.swift in Sources */,
+				D2C4BDC027F5A4D4001B955D /* SignUpInteractor.swift in Sources */,
 				D2F379A928073BC7002C801F /* LineView.swift in Sources */,
 				D2022B5D2802FA0300F428B9 /* ShadowManager.swift in Sources */,
 				D227C7802816A4D60007E5A1 /* ForgotPasswordAssembly.swift in Sources */,
@@ -499,8 +530,9 @@
 				D269185427FF116500F34C86 /* FirebaseAuthService.swift in Sources */,
 				D2CB6FCE27FC5A7100258CDE /* LoginViewController.swift in Sources */,
 				D2C4BDBD27F5A4D4001B955D /* SignUpModels.swift in Sources */,
-				D2C4BDC227F5A4E7001B955D /* SignUpProtocols.swift in Sources */,
+				D2C4BDC227F5A4E7001B955D /* SignupProtocols.swift in Sources */,
 				D2CB6FCA27FC5A7100258CDE /* LoginPresenter.swift in Sources */,
+				D227C7912816E0640007E5A1 /* ValidatorProtocol.swift in Sources */,
 				D26DE4C127F5CD6700E77411 /* Button.swift in Sources */,
 				D2CB6FCF27FC5A7100258CDE /* LoginAssembly.swift in Sources */,
 				D269185C27FF117700F34C86 /* FirebaseFirestoreError.swift in Sources */,
