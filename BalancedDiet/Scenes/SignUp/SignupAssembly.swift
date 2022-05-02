@@ -11,8 +11,7 @@ enum SignupAssembly {
     static func assembly() -> UIViewController {
         let presenter = SignUpPresenter()
         let router = SignUpRouter()
-        let validator = ValidatorManager()
-        let interactor = SignUpInteractor(presenter: presenter, validator: validator)
+        let interactor = SignUpInteractor(presenter: presenter)
         let viewController = SignupViewController(interactor: interactor, router: router)
 
         router.viewController = viewController

@@ -156,6 +156,26 @@ final class LoginViewController: UIViewController {
         }
     }
 
+    private func validationErrorType(error: Login.LoginData.ValidationError) {
+        switch error {
+        case .email:
+            emailTextField.setError(error: error.message)
+        case .password:
+            passwordTextField.setError(error: error.message)
+        }
+    }
+
+    private func processError(error: Login.LoginData.ErrorType) {
+        switch error {
+        case .validationError(let errors):
+            errors.forEach { validationError in
+                validationErrorType(error: validationError)
+            }
+        case .firebaseAuthError(message: let message):
+            print(message)
+        }
+    }
+
     private func setupActions() {
         forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonPressed), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
@@ -164,12 +184,23 @@ final class LoginViewController: UIViewController {
         routeToSignUpButton.addTarget(self, action: #selector(routeToSignUpPressed), for: .touchUpInside)
     }
 
+    private func clearAllError() {
+        emailTextField.clearError()
+        passwordTextField.clearError()
+    }
+
     //MARK: - Actions
     @objc private func forgotPasswordButtonPressed() {
         router.routeToForgotPassword()
     }
 
-    @objc private func loginButtonPressed() {}
+    @objc private func loginButtonPressed() {
+        clearAllError()
+
+        let email = emailTextField.getCurrentTextFieldText()
+        let password = passwordTextField.getCurrentTextFieldText()
+        interactor.login(request: Login.LoginData.Request(email: email, password: password))
+    }
 
     @objc private func loginWithGooglePressed() {}
 
@@ -199,5 +230,14 @@ extension LoginViewController: LoginDisplayLogic {
         haveAccountLabel.text = viewModel.haveAccountLabelText
         routeToSignUpButton.setTitle(viewModel.routeToSignUpButtonTitle, for: .normal)
         lineView.text = viewModel.lineViewText
+    }
+
+    func displayLoginResult(viewModel: Login.LoginData.ViewModel) {
+        switch viewModel.authResult {
+        case .success:
+            print("Success")
+        case .failure(error: let error):
+            processError(error: error)
+        }
     }
 }
