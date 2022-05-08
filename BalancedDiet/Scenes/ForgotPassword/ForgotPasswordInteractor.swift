@@ -32,8 +32,7 @@ extension ForgotPasswordInteractor: ForgotPasswordBusinessLogic {
     }
 
     func resetPassword(request: ForgotPassword.ResetPasswordData.Request) {
-        let model = FirebaseAuthDTO.ResetPassword(email: request.email)
-        authService.resetPassword(with: model) { [weak self] result in
+        authService.resetPassword(with: request.email) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success:

@@ -96,10 +96,10 @@ final class FirebaseAuthService {
     }
 
     func resetPassword(
-        with model: FirebaseAuthDTO.ResetPassword,
+        with email: String,
         completion: @escaping (Result<Void, FirebaseAuthError>) -> Void
     ) {
-        Auth.auth().sendPasswordReset(withEmail: model.email) { error in
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
             if error != nil {
                 completion(.failure(.unownError))
             } else {
@@ -128,6 +128,7 @@ final class FirebaseAuthService {
             completion(.success(()))
         }
     }
+
     private func sendVerificationMail(completion: @escaping (Result<Void, FirebaseAuthError>) -> Void) {
         guard let authUser = authUser else {
             completion(.failure(.unownError))

@@ -9,9 +9,7 @@
 enum ForgotPassword {
     enum InitialData {
         struct Request {}
-        
         struct Response {}
-        
         struct ViewModel {
             let titleText: String
             let loginLinkButtonTitle: String
@@ -32,7 +30,7 @@ enum ForgotPassword {
         }
 
         enum AuthResult {
-            case success(model: FirebaseFirestoreDTO.resetPassword)
+            case success
             case failure(error: String)
         }
     }

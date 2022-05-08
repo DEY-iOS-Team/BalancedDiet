@@ -12,7 +12,4 @@ enum FirebaseFirestoreDTO {
         let userName: String
         let email: String
     }
-    struct resetPassword {
-        let email: String
-    }
 }
