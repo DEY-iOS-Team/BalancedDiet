@@ -281,6 +281,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		D27B799C28280F15007E9BE1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D26D1E7E2801D9A10002D3E5 /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		D2C4BDC927F5C970001B955D /* UIElemets */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +325,7 @@
 				D21F85E427F594DA002DDC9E /* Scenes */,
 				D227C78C2816DEB20007E5A1 /* Managers */,
 				D236B0A627EB2BB800AAC9F0 /* Services */,
+				D27B799C28280F15007E9BE1 /* Helpers */,
 				D2C8869427E8648600C88F97 /* Resources */,
 			);
 			path = BalancedDiet;
@@ -336,7 +345,6 @@
 		D2C8869427E8648600C88F97 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D26D1E7E2801D9A10002D3E5 /* Extensions */,
 				D26DE4C427F5E7BF00E77411 /* Fonts */,
 				D2CF8D0E27E88BFA00344661 /* R.generated.swift */,
 				D2C8868A27E8637B00C88F97 /* LaunchScreen.storyboard */,

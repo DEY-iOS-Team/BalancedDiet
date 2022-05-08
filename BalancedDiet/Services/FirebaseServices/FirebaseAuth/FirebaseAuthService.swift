@@ -95,6 +95,19 @@ final class FirebaseAuthService {
         }
     }
 
+    func resetPassword(
+        with model: FirebaseAuthDTO.ResetPassword,
+        completion: @escaping (Result<Void, FirebaseAuthError>) -> Void
+    ) {
+        Auth.auth().sendPasswordReset(withEmail: model.email) { error in
+            if error != nil {
+                completion(.failure(.unownError))
+            } else {
+                completion(.success(()))
+            }
+        }
+    }
+
     func signOut(completion: (Result<Void, FirebaseAuthError>) -> Void) {
         do {
             try Auth.auth().signOut()

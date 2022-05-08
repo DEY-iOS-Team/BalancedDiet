@@ -29,6 +29,7 @@ final class LoginViewController: UIViewController {
     private let containerView = UIView()
     private let lineView = LineView()
     private let haveAccountLabel = UILabel()
+    private let titleLabel = UILabel()
     private let emailTextField = TextFieldView(style: .email)
     private let passwordTextField = TextFieldView(style: .password)
     private let loginButton = Button()
@@ -43,12 +44,6 @@ final class LoginViewController: UIViewController {
         let button = Button()
         button.backgroundColor = R.color.signupWithFacebook()
         return button
-    }()
-
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = R.font.poppinsSemiBold(size: Constants.fontSize)
-        return label
     }()
 
     private let forgotPasswordButton: UIButton = {

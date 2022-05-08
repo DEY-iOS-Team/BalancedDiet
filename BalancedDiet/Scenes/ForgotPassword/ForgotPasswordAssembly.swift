@@ -14,10 +14,10 @@ enum ForgotPasswordAssembly {
         let router = ForgotPasswordRouter()
         let interactor = ForgotPasswordInteractor(presenter: presenter)
         let viewController = ForgotPasswordViewController(interactor: interactor, router: router)
-        
+
         router.viewController = viewController
         presenter.viewController = viewController
-        
+
         return viewController
     }
 }

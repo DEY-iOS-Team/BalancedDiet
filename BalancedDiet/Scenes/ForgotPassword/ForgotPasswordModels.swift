@@ -17,4 +17,23 @@ enum ForgotPassword {
             let loginLinkButtonTitle: String
         }
     }
+
+    enum ResetPasswordData {
+        struct Request {
+            let email: String
+        }
+
+        struct Response {
+            let authResult: AuthResult
+        }
+
+        struct ViewModel {
+            let authResult: AuthResult
+        }
+
+        enum AuthResult {
+            case success(model: FirebaseFirestoreDTO.resetPassword)
+            case failure(error: String)
+        }
+    }
 }
