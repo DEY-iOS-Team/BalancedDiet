@@ -12,6 +12,7 @@ enum FirebaseAuthDTO {
         var email: String
         var password: String
     }
+
     struct CreateUser {
         var email: String
         var password: String

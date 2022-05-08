@@ -9,12 +9,29 @@
 enum ForgotPassword {
     enum InitialData {
         struct Request {}
-        
         struct Response {}
-        
         struct ViewModel {
             let titleText: String
             let loginLinkButtonTitle: String
+        }
+    }
+
+    enum ResetPasswordData {
+        struct Request {
+            let email: String
+        }
+
+        struct Response {
+            let authResult: AuthResult
+        }
+
+        struct ViewModel {
+            let authResult: AuthResult
+        }
+
+        enum AuthResult {
+            case success
+            case failure(error: String)
         }
     }
 }

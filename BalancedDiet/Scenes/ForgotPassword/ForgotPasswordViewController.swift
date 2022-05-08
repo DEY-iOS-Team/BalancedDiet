@@ -34,7 +34,7 @@ final class ForgotPasswordViewController: UIViewController {
 
     private var loginLinkButton: Button = {
         let button = Button()
-        button.addTarget(self, action: #selector( loginButtonPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(loginLinkButtonPressed), for: .touchUpInside)
         return button
     }()
 
@@ -63,7 +63,7 @@ final class ForgotPasswordViewController: UIViewController {
 
     private func configureView() {
         view.backgroundColor = R.color.background()
-        
+
         setupSubviews()
         setupLayout()
     }
@@ -90,7 +90,10 @@ final class ForgotPasswordViewController: UIViewController {
     }
 
     //MARK: - Actions
-    @objc private func  loginButtonPressed() {}
+    @objc private func loginLinkButtonPressed() {
+        let email = emailTextField.getCurrentTextFieldText()
+        interactor.resetPassword(request: ForgotPassword.ResetPasswordData.Request(email: email))
+    }
 
     // MARK: - Interactor Methods
     func fetchInitialData() {
@@ -104,5 +107,14 @@ extension ForgotPasswordViewController: ForgotPasswordDisplayLogic {
     func displayInititalData(viewModel: ForgotPassword.InitialData.ViewModel) {
         titleLabel.text = viewModel.titleText
         loginLinkButton.setTitle(viewModel.loginLinkButtonTitle, for: .normal)
+    }
+
+    func displayResetPasswordResult(viewModel: ForgotPassword.ResetPasswordData.ViewModel) {
+        switch viewModel.authResult {
+        case .success:
+            print("Success")
+        case .failure(error: let error):
+            print(error)
+        }
     }
 }

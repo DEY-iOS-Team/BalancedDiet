@@ -20,4 +20,9 @@ extension ForgotPasswordPresenter: ForgotPasswordPresentationLogic {
         )
         viewController?.displayInititalData(viewModel: viewModel)
     }
+
+    func presentResetPasswordResult(response: ForgotPassword.ResetPasswordData.Response) {
+        let viewModel = ForgotPassword.ResetPasswordData.ViewModel(authResult: response.authResult)
+        viewController?.displayResetPasswordResult(viewModel: viewModel)
+    }
 }
