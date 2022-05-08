@@ -128,6 +128,7 @@ final class FirebaseAuthService {
             completion(.success(()))
         }
     }
+
     private func sendVerificationMail(completion: @escaping (Result<Void, FirebaseAuthError>) -> Void) {
         guard let authUser = authUser else {
             completion(.failure(.unownError))

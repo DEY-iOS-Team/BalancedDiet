@@ -63,7 +63,7 @@ final class ForgotPasswordViewController: UIViewController {
 
     private func configureView() {
         view.backgroundColor = R.color.background()
-        
+
         setupSubviews()
         setupLayout()
     }

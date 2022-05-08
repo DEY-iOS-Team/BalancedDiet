@@ -9,9 +9,8 @@
 enum ForgotPassword {
     enum InitialData {
         struct Request {}
-        
         struct Response {}
-        
+
         struct ViewModel {
             let titleText: String
             let loginLinkButtonTitle: String
