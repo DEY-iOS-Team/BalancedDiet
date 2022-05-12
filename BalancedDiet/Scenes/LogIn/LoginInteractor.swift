@@ -3,7 +3,6 @@
 //  BalancedDiet
 //
 //  Created by Yan Pepik on 5.04.22.
-//
 
 final class LoginInteractor {
     // MARK: - Private Properties
@@ -43,13 +42,33 @@ final class LoginInteractor {
         }
         return errorArray
     }
+
+    private func saveUser(model: FirebaseAuthDTO.LoginWithCredential) {
+        let loginDTO = FirebaseFirestoreDTO.User(userName: model.username, email: model.email)
+
+        firestoreService.saveData(endpoint: SignUpEndpoint.save(id: model.uid), model: loginDTO) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.presenter.presentSocialNetworkResult(
+                    response: Login.LoginWithSocialNetwork.Response(authResult: .success)
+                )
+            case .failure(let error):
+                self.presenter.presentSocialNetworkResult(
+                    response: Login.LoginWithSocialNetwork.Response(
+                        authResult: .firebaseAuthError(message: error.message)
+                    )
+                )
+            }
+        }
+    }
 }
 
 // MARK: - LoginBusinessLogic
 extension LoginInteractor: LoginBusinessLogic {
     func fetchInitialData(request: Login.InitialData.Request) {
         let response = Login.InitialData.Response()
-        presenter.presetInititalData(response: response)
+        presenter.presentInitialData(response: response)
     }
 
     func login(request: Login.LoginData.Request) {
@@ -67,6 +86,39 @@ extension LoginInteractor: LoginBusinessLogic {
             }
         } else {
             presentFailure(error: .validationError(message: errors))
+        }
+    }
+
+    func loginWithSocialNetwork(request: Login.LoginWithSocialNetwork.Request) {
+        switch request.socialNetwork {
+        case .facebook:
+            authService.loginWithFacebook(vc: request.viewController) { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .success(let model):
+                    self.saveUser(model: model)
+                case .failure(let error):
+                    self.presenter.presentSocialNetworkResult(
+                        response: Login.LoginWithSocialNetwork.Response(
+                            authResult: .firebaseAuthError(message: error.message)
+                        )
+                    )
+                }
+            }
+        case .google:
+            authService.loginWithGoogle(vc: request.viewController) { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .success(let model):
+                    self.saveUser(model: model)
+                case .failure(let error):
+                    self.presenter.presentSocialNetworkResult(
+                        response: Login.LoginWithSocialNetwork.Response(
+                            authResult: .firebaseAuthError(message: error.message)
+                        )
+                    )
+                }
+            }
         }
     }
 }

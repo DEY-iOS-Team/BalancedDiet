@@ -45,7 +45,7 @@ final class Button: UIButton {
     private func configureButton() {
         backgroundColor = R.color.accent()
         layer.cornerRadius = Constants.cornerRadius
-        titleLabel?.font = titleLabel?.font.withSize(Constants.sizeFont)
+        titleLabel?.font = R.font.sfProTextLight(size: Constants.sizeFont)
         imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: Constants.contentInsets)
         ShadowManager.setUpShadow(for: self)
     }

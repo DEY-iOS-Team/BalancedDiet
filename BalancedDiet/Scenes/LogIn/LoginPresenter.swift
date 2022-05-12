@@ -12,7 +12,7 @@ final class LoginPresenter {
 
 // MARK: - LoginPresentationLogic
 extension LoginPresenter: LoginPresentationLogic {
-    func presetInititalData(response: Login.InitialData.Response) {
+    func presentInitialData(response: Login.InitialData.Response) {
         let viewModel = Login.InitialData.ViewModel(
             forgotpasswordButtonTitle: R.string.loginLocalization.forgotPassword(),
             titleText: R.string.loginLocalization.login(),
@@ -25,11 +25,16 @@ extension LoginPresenter: LoginPresentationLogic {
             routeToSignUpButtonTitle: R.string.loginLocalization.signUp(),
             lineViewText: R.string.loginLocalization.or()
         )
-        viewController?.displayInititalData(viewModel: viewModel)
+        viewController?.displayInitialData(viewModel: viewModel)
     }
 
     func presentLoginResult(response: Login.LoginData.Response) {
         let viewModel = Login.LoginData.ViewModel(authResult: response.authResult)
         viewController?.displayLoginResult(viewModel: viewModel)
+    }
+
+    func presentSocialNetworkResult(response: Login.LoginWithSocialNetwork.Response) {
+        let viewModel = Login.LoginWithSocialNetwork.ViewModel(authResult: response.authResult)
+        viewController?.loginWithSocialNetwork(viewModel: viewModel)
     }
 }

@@ -28,7 +28,7 @@ final class ForgotPasswordViewController: UIViewController {
 
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = R.font.poppinsSemiBold(size: Constants.fontSize)
+        label.font = R.font.sfProTextLight(size: Constants.fontSize)
         return label
     }()
 

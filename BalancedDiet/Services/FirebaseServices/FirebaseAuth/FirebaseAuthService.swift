@@ -6,6 +6,10 @@
 //
 
 import FirebaseAuth
+import GoogleSignIn
+import FirebaseCore
+import FacebookCore
+import FacebookLogin
 
 final class FirebaseAuthService {
     // MARK: - Properties
@@ -95,6 +99,55 @@ final class FirebaseAuthService {
         }
     }
 
+    func loginWithGoogle(
+        vc: UIViewController,
+        completion: @escaping (Result<FirebaseAuthDTO.LoginWithCredential, FirebaseAuthError>) -> Void
+    ) {
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+        let config = GIDConfiguration(clientID: clientID)
+
+        GIDSignIn.sharedInstance.signIn(with: config, presenting: vc) { [weak self] user, error in
+            if error != nil {
+                completion(.failure(.unownError))
+             }
+             guard
+               let authentication = user?.authentication,
+               let idToken = authentication.idToken
+             else {
+                 completion(.failure(.unownError))
+                 return
+             }
+             let credential = GoogleAuthProvider.credential(
+                withIDToken: idToken,
+                accessToken: authentication.accessToken
+             )
+            guard let self = self else { return }
+            self.loginWithCredential(with: credential, completion: completion)
+        }
+    }
+
+    func loginWithFacebook(
+        vc: UIViewController,
+        completion: @escaping (Result<FirebaseAuthDTO.LoginWithCredential, FirebaseAuthError>) -> Void
+    ) {
+        LoginManager().logIn(permissions: [], viewController: vc) { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .success(_, let declined, let token):
+                    if let token = token, declined.isEmpty {
+                        let credential = FacebookAuthProvider.credential(withAccessToken: token.tokenString)
+                        self.loginWithCredential(with: credential, completion: completion)
+                    } else {
+                        completion(.failure(.unownError))
+                    }
+                case .failed:
+                    completion(.failure(.unownError))
+                case .cancelled:
+                    break
+                }
+            }
+    }
+
     func resetPassword(
         with email: String,
         completion: @escaping (Result<Void, FirebaseAuthError>) -> Void
@@ -148,6 +201,33 @@ final class FirebaseAuthService {
                 }
             }
             completion(.success(()))
+        }
+    }
+
+    private func loginWithCredential(
+        with credential: AuthCredential,
+        completion: @escaping (Result<FirebaseAuthDTO.LoginWithCredential, FirebaseAuthError>) -> Void
+    ) {
+        Auth.auth().signIn(with: credential) { authResult, error in
+            if error != nil {
+                completion(.failure(.unownError))
+            } else {
+                guard
+                    let user = authResult?.user,
+                    let username = user.displayName,
+                    let email = user.email
+                else {
+                    completion(.failure(.unownError))
+                    return
+                }
+
+                let response = FirebaseAuthDTO.LoginWithCredential(
+                    uid: user.uid,
+                    username: username,
+                    email: email
+                )
+                completion(.success(response))
+            }
         }
     }
 }

@@ -30,6 +30,9 @@
 		D227C7952816E3820007E5A1 /* ValidatorLocalization.strings in Resources */ = {isa = PBXBuildFile; fileRef = D227C7942816E3820007E5A1 /* ValidatorLocalization.strings */; };
 		D236B0CD27EB667800AAC9F0 /* DataLocalization.strings in Resources */ = {isa = PBXBuildFile; fileRef = D236B0CC27EB667800AAC9F0 /* DataLocalization.strings */; };
 		D257BE4E281BD4E9004B7369 /* SignUpEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D257BE4D281BD4E9004B7369 /* SignUpEndpoint.swift */; };
+		D25F521428326D0C00017C20 /* SFProTextBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D25F521128326D0B00017C20 /* SFProTextBold.otf */; };
+		D25F521528326D0C00017C20 /* SFProTextRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D25F521228326D0C00017C20 /* SFProTextRegular.otf */; };
+		D25F521628326D0C00017C20 /* SFProTextLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D25F521328326D0C00017C20 /* SFProTextLight.otf */; };
 		D269185327FF116500F34C86 /* FirebaseAuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D269185027FF116500F34C86 /* FirebaseAuthError.swift */; };
 		D269185527FF116500F34C86 /* FirebaseAuthDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D269185227FF116500F34C86 /* FirebaseAuthDTO.swift */; };
 		D269185A27FF117700F34C86 /* FirebaseFirestoreDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D269185627FF117700F34C86 /* FirebaseFirestoreDTO.swift */; };
@@ -46,6 +49,9 @@
 		D27E3F1F27FF166200F75636 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D27E3F1E27FF166200F75636 /* FirebaseFirestore */; };
 		D27E3F2127FF166200F75636 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = D27E3F2027FF166200F75636 /* FirebaseFirestoreSwift-Beta */; };
 		D27E3F2727FF166200F75636 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D27E3F2627FF166200F75636 /* FirebaseStorage */; };
+		D290A783282A91F400967DEC /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = D290A782282A91F400967DEC /* FacebookCore */; };
+		D290A785282A91F400967DEC /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = D290A784282A91F400967DEC /* FacebookLogin */; };
+		D290A788282A920E00967DEC /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = D290A787282A920E00967DEC /* GoogleSignIn */; };
 		D2C042F528095E3D001A1579 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C042F428095E3D001A1579 /* UIView.swift */; };
 		D2C042FA2809A5C8001A1579 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C042F92809A5C8001A1579 /* UIViewController.swift */; };
 		D2C11B922808A1E100959A30 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C11B912808A1E100959A30 /* String.swift */; };
@@ -93,6 +99,9 @@
 		D227C7942816E3820007E5A1 /* ValidatorLocalization.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = ValidatorLocalization.strings; sourceTree = "<group>"; };
 		D236B0CC27EB667800AAC9F0 /* DataLocalization.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = DataLocalization.strings; path = BalancedDiet/Services/FirebaseServices/DataLocalization.strings; sourceTree = SOURCE_ROOT; };
 		D257BE4D281BD4E9004B7369 /* SignUpEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEndpoint.swift; sourceTree = "<group>"; };
+		D25F521128326D0B00017C20 /* SFProTextBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProTextBold.otf; sourceTree = "<group>"; };
+		D25F521228326D0C00017C20 /* SFProTextRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProTextRegular.otf; sourceTree = "<group>"; };
+		D25F521328326D0C00017C20 /* SFProTextLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProTextLight.otf; sourceTree = "<group>"; };
 		D269185027FF116500F34C86 /* FirebaseAuthError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuthError.swift; sourceTree = "<group>"; };
 		D269185227FF116500F34C86 /* FirebaseAuthDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuthDTO.swift; sourceTree = "<group>"; };
 		D269185627FF117700F34C86 /* FirebaseFirestoreDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreDTO.swift; sourceTree = "<group>"; };
@@ -134,12 +143,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D290A785282A91F400967DEC /* FacebookLogin in Frameworks */,
 				D2CF8D1227E88C2500344661 /* Rswift in Frameworks */,
 				D27E3F2127FF166200F75636 /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				D290A783282A91F400967DEC /* FacebookCore in Frameworks */,
 				D27E3F2727FF166200F75636 /* FirebaseStorage in Frameworks */,
 				D27E3F1927FF166200F75636 /* FirebaseAuth in Frameworks */,
 				D2CF8D1527E88D3800344661 /* SnapKit in Frameworks */,
 				D27E3F1F27FF166200F75636 /* FirebaseFirestore in Frameworks */,
+				D290A788282A920E00967DEC /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +288,9 @@
 		D26DE4C427F5E7BF00E77411 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				D25F521128326D0B00017C20 /* SFProTextBold.otf */,
+				D25F521328326D0C00017C20 /* SFProTextLight.otf */,
+				D25F521228326D0C00017C20 /* SFProTextRegular.otf */,
 				D2B3F4C3280725F00069CAC7 /* PoppinsSemiBold.ttf */,
 			);
 			path = Fonts;
@@ -409,6 +424,9 @@
 				D27E3F1E27FF166200F75636 /* FirebaseFirestore */,
 				D27E3F2027FF166200F75636 /* FirebaseFirestoreSwift-Beta */,
 				D27E3F2627FF166200F75636 /* FirebaseStorage */,
+				D290A782282A91F400967DEC /* FacebookCore */,
+				D290A784282A91F400967DEC /* FacebookLogin */,
+				D290A787282A920E00967DEC /* GoogleSignIn */,
 			);
 			productName = BalancedDiet;
 			productReference = D2C8867C27E8637A00C88F97 /* BalancedDiet.app */;
@@ -442,6 +460,8 @@
 				D2CF8D1027E88C2500344661 /* XCRemoteSwiftPackageReference "R.swift" */,
 				D2CF8D1327E88D3800344661 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				D27E3F1727FF166200F75636 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				D290A781282A91F400967DEC /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				D290A786282A920E00967DEC /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = D2C8867D27E8637A00C88F97 /* Products */;
 			projectDirPath = "";
@@ -457,6 +477,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D25F521528326D0C00017C20 /* SFProTextRegular.otf in Resources */,
 				D2C4BDC427F5A962001B955D /* Colors.xcassets in Resources */,
 				D227C7952816E3820007E5A1 /* ValidatorLocalization.strings in Resources */,
 				D2F379A528072945002C801F /* SignupLocalization.strings in Resources */,
@@ -464,7 +485,9 @@
 				D2C8868C27E8637B00C88F97 /* LaunchScreen.storyboard in Resources */,
 				D2F379A628073B7C002C801F /* PoppinsSemiBold.ttf in Resources */,
 				D227C7832816AB380007E5A1 /* ForgotPasswordLocalization.strings in Resources */,
+				D25F521628326D0C00017C20 /* SFProTextLight.otf in Resources */,
 				D2C8868927E8637B00C88F97 /* Assets.xcassets in Resources */,
+				D25F521428326D0C00017C20 /* SFProTextBold.otf in Resources */,
 				D236B0CD27EB667800AAC9F0 /* DataLocalization.strings in Resources */,
 				D26D1E6928006C080002D3E5 /* TextFieldLocalization.strings in Resources */,
 				D2C4BDC827F5AE15001B955D /* GoogleService-Info.plist in Resources */,
@@ -763,6 +786,22 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		D290A781282A91F400967DEC /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 13.2.0;
+			};
+		};
+		D290A786282A920E00967DEC /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 6.1.0;
+			};
+		};
 		D2CF8D1027E88C2500344661 /* XCRemoteSwiftPackageReference "R.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mac-cain13/R.swift.Library";
@@ -801,6 +840,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D27E3F1727FF166200F75636 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		D290A782282A91F400967DEC /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D290A781282A91F400967DEC /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
+		};
+		D290A784282A91F400967DEC /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D290A781282A91F400967DEC /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+		D290A787282A920E00967DEC /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D290A786282A920E00967DEC /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
 		};
 		D2CF8D1127E88C2500344661 /* Rswift */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 enum Login {
     enum InitialData {
@@ -40,6 +41,33 @@ enum Login {
         struct ViewModel {
             let authResult: AuthResult
         }
+    }
+
+    enum LoginWithSocialNetwork {
+        struct Request {
+            let socialNetwork: SocialNetwork
+            let viewController: UIViewController
+        }
+
+        struct Response {
+            let authResult: AuthResult
+        }
+
+        struct ViewModel {
+            let authResult: AuthResult
+        }
+    }
+}
+
+extension Login.LoginWithSocialNetwork {
+    enum AuthResult {
+        case success
+        case firebaseAuthError(message: String)
+    }
+
+    enum SocialNetwork {
+        case facebook
+        case google
     }
 }
 

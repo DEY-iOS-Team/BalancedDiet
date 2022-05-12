@@ -81,11 +81,10 @@ final class TextField: UITextField {
 
     // MARK: - Private Methods
     private func configureTextField() {
-        backgroundColor = R.color.background()
+        backgroundColor = R.color.white()
+        font = R.font.sfProTextLight(size: 22)
         autocapitalizationType = .none
         layer.cornerRadius = Constants.cornerRadius
-        layer.borderWidth = 1
-        layer.borderColor = R.color.accent()?.cgColor
         ShadowManager.setUpShadow(for: self)
     }
 

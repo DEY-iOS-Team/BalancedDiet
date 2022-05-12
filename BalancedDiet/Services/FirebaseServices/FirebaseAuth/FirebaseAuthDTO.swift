@@ -13,6 +13,12 @@ enum FirebaseAuthDTO {
         var password: String
     }
 
+    struct LoginWithCredential {
+        let uid: String
+        let username: String
+        let email: String
+    }
+
     struct CreateUser {
         var email: String
         var password: String
