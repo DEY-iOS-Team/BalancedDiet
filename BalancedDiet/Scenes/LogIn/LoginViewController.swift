@@ -28,21 +28,32 @@ final class LoginViewController: UIViewController {
     // MARK: - UI Properties
     private let containerView = UIView()
     private let lineView = LineView()
-    private let haveAccountLabel = UILabel()
-    private let titleLabel = UILabel()
     private let emailTextField = TextFieldView(style: .email)
     private let passwordTextField = TextFieldView(style: .password)
     private let loginButton = Button()
 
+    private let haveAccountLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = R.color.semiLightGrey()
+        label.font = R.font.sfProTextRegular(size: Constants.fontSize / 2)
+        return label
+    }()
+
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = R.font.sfProTextLight(size: Constants.fontSize)
+        return label
+    }()
+
     private let loginWithGoogleButton: Button = {
         let button = Button()
-        button.backgroundColor = R.color.signupWithGoogle()
+        button.backgroundColor = R.color.blue()
         return button
     }()
 
     private let loginWithFacebookButton: Button = {
         let button = Button()
-        button.backgroundColor = R.color.signupWithFacebook()
+        button.backgroundColor = R.color.semiDarkBlue()
         return button
     }()
 
@@ -197,9 +208,15 @@ final class LoginViewController: UIViewController {
         interactor.login(request: Login.LoginData.Request(email: email, password: password))
     }
 
-    @objc private func loginWithGooglePressed() {}
+    @objc private func loginWithGooglePressed() {
+        let request = Login.LoginWithSocialNetwork.Request(socialNetwork: .google, viewController: self)
+        interactor.loginWithSocialNetwork(request: request)
+    }
 
-    @objc private func loginWithFacebookPressed() {}
+    @objc private func loginWithFacebookPressed() {
+        let request = Login.LoginWithSocialNetwork.Request(socialNetwork: .facebook, viewController: self)
+        interactor.loginWithSocialNetwork(request: request)
+    }
 
     @objc private func routeToSignUpPressed() {
         router.routeToSignUp()
@@ -214,7 +231,7 @@ final class LoginViewController: UIViewController {
 
 // MARK: - LoginDisplayLogic
 extension LoginViewController: LoginDisplayLogic {
-    func displayInititalData(viewModel: Login.InitialData.ViewModel) {
+    func displayInitialData(viewModel: Login.InitialData.ViewModel) {
         forgotPasswordButton.setTitle(viewModel.forgotpasswordButtonTitle, for: .normal)
         titleLabel.text = viewModel.titleText
         loginButton.setTitle(viewModel.loginButtonTitle, for: .normal)
@@ -235,4 +252,14 @@ extension LoginViewController: LoginDisplayLogic {
             processError(error: error)
         }
     }
+
+    func loginWithSocialNetwork(viewModel: Login.LoginWithSocialNetwork.ViewModel) {
+        switch viewModel.authResult {
+        case .success:
+            router.routeToSignUp()
+        case .firebaseAuthError(message: let message):
+            print(message)
+        }
+    }
 }
+

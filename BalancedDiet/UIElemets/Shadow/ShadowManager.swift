@@ -9,10 +9,10 @@ import UIKit
 
 enum ShadowManager {
     static func setUpShadow(for view: UIView) {
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOpacity = 0.5
+        view.layer.shadowColor = R.color.semiLightGrey()?.cgColor
+        view.layer.shadowOpacity = 0.25
         view.layer.shadowOffset = .zero
-        view.layer.shadowRadius = 3
-        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowRadius = 3.5
+        view.layer.shadowColor = R.color.semiLightGrey()?.cgColor
     }
 }

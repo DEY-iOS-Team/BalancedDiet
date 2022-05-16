@@ -6,18 +6,21 @@
 //
 
 protocol LoginDisplayLogic: AnyObject {
-    func displayInititalData(viewModel: Login.InitialData.ViewModel)
+    func displayInitialData(viewModel: Login.InitialData.ViewModel)
     func displayLoginResult(viewModel: Login.LoginData.ViewModel)
+    func loginWithSocialNetwork(viewModel: Login.LoginWithSocialNetwork.ViewModel)
 }
 
 protocol LoginBusinessLogic: AnyObject {
     func fetchInitialData(request: Login.InitialData.Request)
     func login(request: Login.LoginData.Request)
+    func loginWithSocialNetwork(request: Login.LoginWithSocialNetwork.Request)
 }
 
 protocol LoginPresentationLogic: AnyObject {
-    func presetInititalData(response: Login.InitialData.Response)
+    func presentInitialData(response: Login.InitialData.Response)
     func presentLoginResult(response: Login.LoginData.Response)
+    func presentSocialNetworkResult(response: Login.LoginWithSocialNetwork.Response)
 }
 
 protocol LoginRoutingLogic: AnyObject {

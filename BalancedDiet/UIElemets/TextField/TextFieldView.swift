@@ -39,7 +39,7 @@ final class TextFieldView: UIView {
         didSet {
             guard
                 let placeholder = placeholder,
-                let color = R.color.text()
+                let color = R.color.lightGrey()
             else { return }
 
             textField.attributedPlaceholder = NSAttributedString(
@@ -54,7 +54,7 @@ final class TextFieldView: UIView {
     private let errorMessageLabel: UILabel = {
         let label = UILabel()
         label.textColor = R.color.red()
-        label.font = R.font.poppinsSemiBold(size: 16)
+        label.font = R.font.sfProTextLight(size: 16)
         label.numberOfLines = 0
 
         return label
