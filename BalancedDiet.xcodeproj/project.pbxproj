@@ -29,6 +29,8 @@
 		D227C7912816E0640007E5A1 /* ValidatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D227C7902816E0640007E5A1 /* ValidatorProtocol.swift */; };
 		D227C7952816E3820007E5A1 /* ValidatorLocalization.strings in Resources */ = {isa = PBXBuildFile; fileRef = D227C7942816E3820007E5A1 /* ValidatorLocalization.strings */; };
 		D236B0CD27EB667800AAC9F0 /* DataLocalization.strings in Resources */ = {isa = PBXBuildFile; fileRef = D236B0CC27EB667800AAC9F0 /* DataLocalization.strings */; };
+		D2504A46283545A600B8E0E6 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2504A45283545A600B8E0E6 /* TabBarController.swift */; };
+		D2504A482836271100B8E0E6 /* TabBarLocalization.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2504A472836271100B8E0E6 /* TabBarLocalization.strings */; };
 		D257BE4E281BD4E9004B7369 /* SignUpEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D257BE4D281BD4E9004B7369 /* SignUpEndpoint.swift */; };
 		D25F521428326D0C00017C20 /* SFProTextBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D25F521128326D0B00017C20 /* SFProTextBold.otf */; };
 		D25F521528326D0C00017C20 /* SFProTextRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D25F521228326D0C00017C20 /* SFProTextRegular.otf */; };
@@ -98,6 +100,8 @@
 		D227C7902816E0640007E5A1 /* ValidatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorProtocol.swift; sourceTree = "<group>"; };
 		D227C7942816E3820007E5A1 /* ValidatorLocalization.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = ValidatorLocalization.strings; sourceTree = "<group>"; };
 		D236B0CC27EB667800AAC9F0 /* DataLocalization.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = DataLocalization.strings; path = BalancedDiet/Services/FirebaseServices/DataLocalization.strings; sourceTree = SOURCE_ROOT; };
+		D2504A45283545A600B8E0E6 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		D2504A472836271100B8E0E6 /* TabBarLocalization.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = TabBarLocalization.strings; sourceTree = "<group>"; };
 		D257BE4D281BD4E9004B7369 /* SignUpEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEndpoint.swift; sourceTree = "<group>"; };
 		D25F521128326D0B00017C20 /* SFProTextBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProTextBold.otf; sourceTree = "<group>"; };
 		D25F521228326D0C00017C20 /* SFProTextRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProTextRegular.otf; sourceTree = "<group>"; };
@@ -169,9 +173,8 @@
 		D21F85E427F594DA002DDC9E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				D227C7712816A4B70007E5A1 /* ForgotPassword */,
-				D2CB6FD527FC5AE800258CDE /* LogIn */,
-				D21F85E527F59837002DDC9E /* SignUp */,
+				D2504A44283544E700B8E0E6 /* TabBarNavigation */,
+				D2504A322835411E00B8E0E6 /* Authorization */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -231,6 +234,25 @@
 				D269184D27FF112800F34C86 /* FirebaseServices */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		D2504A322835411E00B8E0E6 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				D21F85E527F59837002DDC9E /* SignUp */,
+				D2CB6FD527FC5AE800258CDE /* LogIn */,
+				D227C7712816A4B70007E5A1 /* ForgotPassword */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		D2504A44283544E700B8E0E6 /* TabBarNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				D2504A45283545A600B8E0E6 /* TabBarController.swift */,
+				D2504A472836271100B8E0E6 /* TabBarLocalization.strings */,
+			);
+			path = TabBarNavigation;
 			sourceTree = "<group>";
 		};
 		D269184D27FF112800F34C86 /* FirebaseServices */ = {
@@ -486,6 +508,7 @@
 				D2F379A628073B7C002C801F /* PoppinsSemiBold.ttf in Resources */,
 				D227C7832816AB380007E5A1 /* ForgotPasswordLocalization.strings in Resources */,
 				D25F521628326D0C00017C20 /* SFProTextLight.otf in Resources */,
+				D2504A482836271100B8E0E6 /* TabBarLocalization.strings in Resources */,
 				D2C8868927E8637B00C88F97 /* Assets.xcassets in Resources */,
 				D25F521428326D0C00017C20 /* SFProTextBold.otf in Resources */,
 				D236B0CD27EB667800AAC9F0 /* DataLocalization.strings in Resources */,
@@ -537,6 +560,7 @@
 				D227C7812816A4D60007E5A1 /* ForgotPasswordInteractor.swift in Sources */,
 				D2C8868227E8637A00C88F97 /* SceneDelegate.swift in Sources */,
 				D2184326281CAEAE00C2E77B /* LoginRouter.swift in Sources */,
+				D2504A46283545A600B8E0E6 /* TabBarController.swift in Sources */,
 				D269185D27FF117700F34C86 /* FirestoreEndpointProtocol.swift in Sources */,
 				D227C77F2816A4D60007E5A1 /* ForgotPasswordProtocols.swift in Sources */,
 				D2C4BDBA27F5A4D4001B955D /* SignUpPresenter.swift in Sources */,
