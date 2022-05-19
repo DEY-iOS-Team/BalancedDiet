@@ -111,6 +111,13 @@ final class LoginViewController: UIViewController {
         startSettings()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+
+    }
+
     // MARK: - Private Methods
     private func startSettings() {
         fetchInitialData()

@@ -1,0 +1,12 @@
+/* 
+  TabBarLocalization.strings
+  BalancedDiet
+
+  Created by Yan Pepik on 19.05.22.
+  
+*/
+
+"home" = "Home";
+"search" = "Search";
+"liked" = "Liked";
+"profile" = "Profile";
